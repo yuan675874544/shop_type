@@ -47,4 +47,10 @@ public class ShuXingService implements ShuService {
         shuDao.update(shuXing);
     }
 
+    @Override
+    public void add(ShuXing shuXing) {
+        shuXing.setCreateDate(new Date());
+        shuDao.add(shuXing);
+    }
+
 }

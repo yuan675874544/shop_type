@@ -13,4 +13,6 @@ public interface ShuService {
     Map getDataByid(Integer sid);
 
     void update(ShuXing shuXing);
+
+    void add(ShuXing shuXing);
 }

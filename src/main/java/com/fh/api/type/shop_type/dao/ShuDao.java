@@ -2,6 +2,7 @@ package com.fh.api.type.shop_type.dao;
 
 import com.fh.api.type.shop_type.model.ShuXing;
 import com.fh.api.type.shop_type.utils.ShuVO;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -19,4 +20,8 @@ public interface ShuDao {
     @Update("update t_shuxing set  name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type}, " +
             "            isSKU=#{isSKU},isDel=#{isDel},updateDate=#{updateDate},author=#{author}  where sid=#{sid}")
     void update(ShuXing shuXing);
+    @Insert(" insert  into t_shuxing (name,nameCH,typeId,type,isSKU,isDel,createDate,author)\n" +
+            "\n" +
+            "  value(#{name},#{nameCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{author})")
+    void add(ShuXing shuXing);
 }

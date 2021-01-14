@@ -53,7 +53,6 @@ public class PinController {
      * post请求
      *
      * */
-//新增
     //新增
     @PostMapping("add")
     public  Map add(Pin pin){

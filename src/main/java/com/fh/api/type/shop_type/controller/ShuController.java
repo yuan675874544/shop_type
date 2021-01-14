@@ -1,5 +1,6 @@
 package com.fh.api.type.shop_type.controller;
 
+import com.fh.api.type.shop_type.model.Pin;
 import com.fh.api.type.shop_type.model.ShuXing;
 import com.fh.api.type.shop_type.service.ShuService;
 import com.fh.api.type.shop_type.utils.ResultData;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -44,5 +46,13 @@ public class ShuController {
     public ResultData update(ShuXing shuXing){
         shuService.update(shuXing);
         return  ResultData.success(null);
+    }
+    //新增
+    @PostMapping("add")
+    public  Map add(ShuXing shuXing){
+        Map map=new HashMap();
+        shuService.add(shuXing);
+        map.put("code",1);
+        return map;
     }
 }
