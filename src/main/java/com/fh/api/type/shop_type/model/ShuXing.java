@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 public class ShuXing {
-    private  Integer id;
+    private  Integer sid;
     private  String name;
     private  String nameCH;
     private  Integer typeId;
@@ -21,12 +21,12 @@ public class ShuXing {
     private  Date updateDate;
     private  String author;
 
-    public Integer getId() {
-        return id;
+    public Integer getSid() {
+        return sid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setSid(Integer sid) {
+        this.sid = sid;
     }
 
     public String getName() {

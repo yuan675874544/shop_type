@@ -8,6 +8,7 @@ import com.fh.api.type.shop_type.utils.ShuVO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,12 @@ public class ShuXingService implements ShuService {
     @Override
     public Map getDataByid(Integer sid) {
         return shuDao.getDataByid(sid);
+    }
+
+    @Override
+    public void update(ShuXing shuXing) {
+        shuXing.setUpdateDate(new Date());
+        shuDao.update(shuXing);
     }
 
 }

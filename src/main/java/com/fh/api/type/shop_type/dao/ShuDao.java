@@ -16,4 +16,7 @@ public interface ShuDao {
     void deleteIsdel(Integer sid);
     @Select("select * from t_shuxing  where sid=#{sid}")
     Map getDataByid(Integer sid);
+    @Update("update t_shuxing set  name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type}, " +
+            "            isSKU=#{isSKU},isDel=#{isDel},updateDate=#{updateDate},author=#{author}  where sid=#{sid}")
+    void update(ShuXing shuXing);
 }

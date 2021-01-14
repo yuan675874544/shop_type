@@ -1,5 +1,6 @@
 package com.fh.api.type.shop_type.controller;
 
+import com.fh.api.type.shop_type.model.ShuXing;
 import com.fh.api.type.shop_type.service.ShuService;
 import com.fh.api.type.shop_type.utils.ResultData;
 import com.fh.api.type.shop_type.utils.ShuVO;
@@ -36,7 +37,12 @@ public class ShuController {
     //根据id查询
     @GetMapping("getDataByid")
     public  ResultData getDataByid(Integer sid){
-
         return ResultData.success(shuService.getDataByid(sid));
+    }
+    //修改
+    @PostMapping("update")
+    public ResultData update(ShuXing shuXing){
+        shuService.update(shuXing);
+        return  ResultData.success(null);
     }
 }
