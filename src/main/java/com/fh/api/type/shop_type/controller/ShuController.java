@@ -4,10 +4,7 @@ import com.fh.api.type.shop_type.service.ShuService;
 import com.fh.api.type.shop_type.utils.ResultData;
 import com.fh.api.type.shop_type.utils.ShuVO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -35,5 +32,11 @@ public class ShuController {
     public     ResultData deleteIsdel(Integer sid){
         shuService.deleteIsdel(sid);
         return ResultData.success(null);
+    }
+    //根据id查询
+    @GetMapping("getDataByid")
+    public  ResultData getDataByid(Integer sid){
+
+        return ResultData.success(shuService.getDataByid(sid));
     }
 }

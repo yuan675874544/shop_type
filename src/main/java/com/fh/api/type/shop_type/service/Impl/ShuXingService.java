@@ -35,4 +35,9 @@ public class ShuXingService implements ShuService {
         shuDao.deleteIsdel(sid);
     }
 
+    @Override
+    public Map getDataByid(Integer sid) {
+        return shuDao.getDataByid(sid);
+    }
+
 }

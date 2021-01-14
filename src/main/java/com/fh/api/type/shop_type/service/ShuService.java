@@ -8,4 +8,6 @@ public interface ShuService {
     Map queryShuData(ShuVO vo);
 
     void deleteIsdel(Integer sid);
+
+    Map getDataByid(Integer sid);
 }
