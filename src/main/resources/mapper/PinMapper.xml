@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.api.type.shop_type.dao.PinDao">
+<select id="queryPinCount" parameterType="com.fh.api.type.shop_type.utils.PinVO" resultType="java.lang.Integer">
+
+      select count(*) from t_pin where isdel=0
+    <if test="name!=null and name!=''">
+        and name=#{name}
+    </if>
+</select>
+    <select id="queryPinDataByVo" parameterType="com.fh.api.type.shop_type.utils.PinVO" resultType="com.fh.api.type.shop_type.model.Pin">
+        select * from  t_pin where isdel=0
+        <if test="name!=null and name!=''">
+        and name=#{name}
+    </if>
+         order  by ord desc limit ${size*(current-1)},#{size}
+    </select>
+ </mapper>
