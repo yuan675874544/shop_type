@@ -30,4 +30,10 @@ public class ShuController {
         return  ResultData.success(map);
 
     }
+    //删除
+    @PostMapping("deleteIsdel")
+    public     ResultData deleteIsdel(Integer sid){
+        shuService.deleteIsdel(sid);
+        return ResultData.success(null);
+    }
 }

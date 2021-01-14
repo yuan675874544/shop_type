@@ -29,4 +29,10 @@ public class ShuXingService implements ShuService {
         return map;
     }
 
+    @Override
+    public void deleteIsdel(Integer sid) {
+
+        shuDao.deleteIsdel(sid);
+    }
+
 }

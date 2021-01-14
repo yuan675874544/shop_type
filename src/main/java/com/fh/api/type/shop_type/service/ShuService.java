@@ -6,4 +6,6 @@ import java.util.Map;
 
 public interface ShuService {
     Map queryShuData(ShuVO vo);
+
+    void deleteIsdel(Integer sid);
 }
