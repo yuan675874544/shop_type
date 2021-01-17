@@ -20,4 +20,9 @@ public class ShuValueServiceImpl implements ShuValueService {
     public List<ShuValue> queryAll(Integer attId) {
         return shuValueDao.queryAll(attId);
     }
+
+    @Override
+    public void delValue(Integer vid) {
+        shuValueDao.delValue(vid);
+    }
 }
