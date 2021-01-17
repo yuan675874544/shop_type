@@ -13,4 +13,6 @@ public interface ShuValueService {
     void add(ShuValue shuValue);
 
     Map getDataByid(Integer vid);
+
+    void update(ShuValue shuValue);
 }

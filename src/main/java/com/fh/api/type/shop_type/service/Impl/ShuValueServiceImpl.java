@@ -36,4 +36,9 @@ public class ShuValueServiceImpl implements ShuValueService {
     public Map getDataByid(Integer vid) {
         return shuValueDao.getDataByid(vid);
     }
+
+    @Override
+    public void update(ShuValue shuValue) {
+        shuValueDao.update(shuValue);
+    }
 }

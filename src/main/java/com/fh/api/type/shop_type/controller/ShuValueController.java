@@ -1,5 +1,6 @@
 package com.fh.api.type.shop_type.controller;
 
+import com.fh.api.type.shop_type.model.Pin;
 import com.fh.api.type.shop_type.model.ShuValue;
 import com.fh.api.type.shop_type.service.ShuValueService;
 import com.fh.api.type.shop_type.utils.ResultData;
@@ -43,5 +44,11 @@ public class ShuValueController {
     @GetMapping("getDataByid")
     public  ResultData getDataByid(Integer vid){
         return ResultData.success(shuValueService.getDataByid(vid));
+    }
+    //修改
+    @PostMapping("update")
+    public ResultData update(ShuValue shuValue){
+        shuValueService.update(shuValue);
+        return ResultData.success(null);
     }
 }
