@@ -50,6 +50,7 @@ public class ShuXingService implements ShuService {
     @Override
     public void add(ShuXing shuXing) {
         shuXing.setCreateDate(new Date());
+        shuXing.setIsDel(0);
         shuDao.add(shuXing);
     }
 

@@ -18,7 +18,7 @@ public interface ShuDao {
     @Select("select * from t_shuxing  where sid=#{sid}")
     Map getDataByid(Integer sid);
     @Update("update t_shuxing set  name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type}, " +
-            "            isSKU=#{isSKU},isDel=#{isDel},updateDate=#{updateDate},author=#{author}  where sid=#{sid}")
+            "            isSKU=#{isSKU},updateDate=#{updateDate} where sid=#{sid}")
     void update(ShuXing shuXing);
     @Insert(" insert  into t_shuxing (name,nameCH,typeId,type,isSKU,isDel,createDate,author)\n" +
             "\n" +

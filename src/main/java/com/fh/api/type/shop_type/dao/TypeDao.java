@@ -17,9 +17,9 @@ public interface TypeDao {
     List<ShopType> getDataByPid(Integer pid);
     @Select("select id from shop_type where createDate=#{createDate}")
     Integer queryCreateDate(Date createDate);
-    @Insert(" insert  into shop_type (name,pid,createDate)\n" +
+    @Insert(" insert  into shop_type (name,pid,createDate,isDel)\n" +
             "\n" +
-            "  value(#{name},#{pid},#{createDate})")
+            "  value(#{name},#{pid},#{createDate},#{isDel})")
     void add(ShopType shopType);
 
     @Select("select * from shop_type where id=#{id}")

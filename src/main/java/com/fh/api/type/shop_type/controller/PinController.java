@@ -4,6 +4,7 @@ import com.fh.api.type.shop_type.dao.PinDao;
 import com.fh.api.type.shop_type.model.Pin;
 import com.fh.api.type.shop_type.service.PinService;
 import com.fh.api.type.shop_type.utils.FileSaveUtils;
+import com.fh.api.type.shop_type.utils.OssFileUtils;
 import com.fh.api.type.shop_type.utils.PinVO;
 import com.fh.api.type.shop_type.utils.ResultData;
 import org.springframework.web.bind.annotation.*;
@@ -11,8 +12,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @CrossOrigin
 @RestController
@@ -29,10 +32,15 @@ public class PinController {
      * post请求
      *
      * */
-    @PostMapping("uploadFile")
-    public ResultData uploadFile(MultipartFile img , HttpServletRequest request){
-        String abc = FileSaveUtils.saveFile(img ,"images",request);
-        return ResultData.success(abc);
+    @RequestMapping("uploadFile")
+    public  ResultData uploadFile(MultipartFile img) throws IOException {
+        //处理新名称
+        String originalFilename = img.getOriginalFilename();
+        //防止中文引起的错误
+        String newName= UUID.randomUUID().toString()+originalFilename.substring(originalFilename.lastIndexOf("."));
+        //存储路径
+        newName="imgs/"+newName;
+        return ResultData.success(OssFileUtils.uploadFile(img.getInputStream(),newName));
     }
     //查询 分页
     @PostMapping("list")

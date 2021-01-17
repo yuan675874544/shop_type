@@ -8,6 +8,16 @@ public class ShuVO {
 
     private Long size; //每页展示条数
 
+    private  String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Long getCurrent() {
         return current;
     }
