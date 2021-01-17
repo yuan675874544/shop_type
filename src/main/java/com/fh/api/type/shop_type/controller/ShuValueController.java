@@ -11,10 +11,10 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@CrossOrigin
 @RequestMapping("ShuValueController")
 @RestController
-@CrossOrigin
+
 public class ShuValueController {
     @Resource
     private ShuValueService shuValueService;
@@ -25,12 +25,10 @@ public class ShuValueController {
         return ResultData.success(list);
     }
     //删除
-    @DeleteMapping("delValue")
-    public Map delValue(Integer vid){
-        Map map=new HashMap();
-        shuValueService.delValue(vid);
-        map.put("code",1);
-        return  map;
+    @PostMapping("deleteIsdel")
+    public     ResultData deleteIsdel(Integer vid){
+        shuValueService.deleteIsdel(vid);
+        return ResultData.success(null);
     }
     //新增
     @PostMapping("add")

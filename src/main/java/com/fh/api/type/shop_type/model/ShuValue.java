@@ -1,10 +1,21 @@
 package com.fh.api.type.shop_type.model;
 
+import org.springframework.data.relational.core.sql.In;
+
 public class ShuValue {
 private  Integer vid;
 private   String name;
 private  String nameCH;
-    private  Integer attId;
+private  Integer attId;
+private Integer isDel;
+
+    public Integer getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(Integer isDel) {
+        this.isDel = isDel;
+    }
 
     public Integer getVid() {
         return vid;

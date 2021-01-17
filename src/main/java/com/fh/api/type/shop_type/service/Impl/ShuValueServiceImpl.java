@@ -22,13 +22,10 @@ public class ShuValueServiceImpl implements ShuValueService {
         return shuValueDao.queryAll(attId);
     }
 
-    @Override
-    public void delValue(Integer vid) {
-        shuValueDao.delValue(vid);
-    }
 
     @Override
     public void add(ShuValue shuValue) {
+        shuValue.setIsDel(0);
         shuValueDao.add(shuValue);
     }
 
@@ -40,5 +37,10 @@ public class ShuValueServiceImpl implements ShuValueService {
     @Override
     public void update(ShuValue shuValue) {
         shuValueDao.update(shuValue);
+    }
+
+    @Override
+    public void deleteIsdel(Integer vid) {
+shuValueDao.deleteIsdel(vid);
     }
 }

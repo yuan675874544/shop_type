@@ -12,14 +12,14 @@ import java.util.Map;
 
 public interface ShuValueDao {
 
-    @Select("select * from t_shuvaluee  where attId=#{attId}")
+    @Select("select * from t_shuvaluee  where isDel=0 and attId=#{attId}")
     List<ShuValue> queryAll(Integer attId);
-    @Delete("delete from t_shuvaluee where vid=#{vid}")
-    void delValue(Integer id);
     @Insert("insert  into  t_shuvaluee (name,nameCH,attId) value(#{name},#{nameCH},#{attId})")
     void add(ShuValue shuValue);
     @Select("select * from t_shuvaluee  where vid=#{vid}")
     Map getDataByid(Integer vid);
     @Update("update  t_shuvaluee set name=#{name},nameCH=#{nameCH} where vid=#{vid}")
     void update(ShuValue shuValue);
+    @Update("update t_shuvaluee set isDel=1 where vid=#{vid}")
+    void deleteIsdel(Integer vid);
 }

@@ -8,11 +8,12 @@ import java.util.Map;
 public interface ShuValueService {
     List<ShuValue> queryAll(Integer attId);
 
-    void delValue(Integer vid);
 
     void add(ShuValue shuValue);
 
     Map getDataByid(Integer vid);
 
     void update(ShuValue shuValue);
+
+    void deleteIsdel(Integer vid);
 }
