@@ -8,4 +8,6 @@ public interface ShuValueService {
     List<ShuValue> queryAll(Integer attId);
 
     void delValue(Integer vid);
+
+    void add(ShuValue shuValue);
 }

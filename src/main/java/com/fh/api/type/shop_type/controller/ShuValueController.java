@@ -4,6 +4,7 @@ import com.fh.api.type.shop_type.model.ShuValue;
 import com.fh.api.type.shop_type.service.ShuValueService;
 import com.fh.api.type.shop_type.utils.ResultData;
 import org.springframework.web.bind.annotation.*;
+import sun.net.idn.Punycode;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -23,12 +24,19 @@ public class ShuValueController {
         return ResultData.success(list);
     }
     //删除
-    //删除
     @DeleteMapping("delValue")
     public Map delValue(Integer vid){
         Map map=new HashMap();
         shuValueService.delValue(vid);
         map.put("code",1);
         return  map;
+    }
+    //新增
+    @PostMapping("add")
+    public  Map add(ShuValue shuValue){
+        Map map=new HashMap();
+        shuValueService.add(shuValue);
+        map.put("code",1);
+        return map;
     }
 }

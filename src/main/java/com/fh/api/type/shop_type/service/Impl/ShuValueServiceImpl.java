@@ -25,4 +25,9 @@ public class ShuValueServiceImpl implements ShuValueService {
     public void delValue(Integer vid) {
         shuValueDao.delValue(vid);
     }
+
+    @Override
+    public void add(ShuValue shuValue) {
+        shuValueDao.add(shuValue);
+    }
 }
