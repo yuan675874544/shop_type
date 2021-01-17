@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ShuValueDao {
 
@@ -16,4 +17,6 @@ public interface ShuValueDao {
     void delValue(Integer id);
     @Insert("insert  into  t_shuvaluee (name,nameCH) value(#{name},#{nameCH})")
     void add(ShuValue shuValue);
+    @Select("select * from t_shuvaluee  where vid=#{vid}")
+    Map getDataByid(Integer vid);
 }

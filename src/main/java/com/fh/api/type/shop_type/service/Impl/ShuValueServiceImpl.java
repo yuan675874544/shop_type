@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import javax.annotation.Resource;
 import java.security.PublicKey;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ShuValueServiceImpl implements ShuValueService {
@@ -29,5 +30,10 @@ public class ShuValueServiceImpl implements ShuValueService {
     @Override
     public void add(ShuValue shuValue) {
         shuValueDao.add(shuValue);
+    }
+
+    @Override
+    public Map getDataByid(Integer vid) {
+        return shuValueDao.getDataByid(vid);
     }
 }

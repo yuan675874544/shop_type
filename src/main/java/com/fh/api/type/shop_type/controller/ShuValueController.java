@@ -39,4 +39,9 @@ public class ShuValueController {
         map.put("code",1);
         return map;
     }
+    //根据id去查询单条数据
+    @GetMapping("getDataByid")
+    public  ResultData getDataByid(Integer vid){
+        return ResultData.success(shuValueService.getDataByid(vid));
+    }
 }
