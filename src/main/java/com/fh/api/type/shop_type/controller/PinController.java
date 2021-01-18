@@ -42,7 +42,15 @@ public class PinController {
         newName="imgs/"+newName;
         return ResultData.success(OssFileUtils.uploadFile(img.getInputStream(),newName));
     }
-    //查询 分页
+
+    /*查询
+     * 路径   127.0.0.1:8080/PinController/list
+     *
+     * 参数 current(当前页) size(每页展示条数)
+     *
+     * post请求
+     *
+     * */
     @PostMapping("list")
     public  ResultData list(PinVO vo){
         if (vo.getCurrent()==null){
@@ -96,7 +104,14 @@ public class PinController {
         pinService.update(pin);
         return ResultData.success(null);
     }
-    //删除
+    /*
+     * 路径   127.0.0.1:8080/PinController/deleteIsdel
+     *
+     * 参数 iid
+     *
+     * post请求
+     *
+     * */
     @PostMapping("deleteIsdel")
     public     ResultData deleteIsdel(Integer iid){
         pinService.deleteIsdel(iid);
