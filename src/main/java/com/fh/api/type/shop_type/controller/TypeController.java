@@ -32,7 +32,7 @@ public class TypeController {
     /*
      * 路径   127.0.0.1:8080/TypeController/getDataByPid
      *
-     * 参数：id,pid,name,createDate,updateDate,isDel
+     * 参数：pid
      *
      * get请求
      *
@@ -73,7 +73,7 @@ public class TypeController {
     /*
      * 路径   127.0.0.1:8080/TypeController/update
      *
-     * 参数：id （必传）     pid   name  isDel
+     * 参数：id （必传）     pid   name
      *
      * post请求
      *
