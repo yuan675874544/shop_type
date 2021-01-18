@@ -18,6 +18,14 @@ import java.util.Map;
 public class ShuController {
     @Resource
     private ShuService shuService;
+    /*查询
+     * 路径   127.0.0.1:8080/ShuController/queryShuData
+     *
+     * 参数 current(当前页) size(每页展示条数)
+     *
+     * post请求
+     *
+     * */
     @PostMapping("queryShuData")
     public ResultData queryShuData(ShuVO vo){
         if (vo.getCurrent()==null){
@@ -31,23 +39,53 @@ public class ShuController {
 
     }
     //删除
+    /*
+     * 路径   127.0.0.1:8080/ShuController/deleteIsdel
+     *
+     * 参数 id
+     *
+     * post请求
+     *
+     * */
     @PostMapping("deleteIsdel")
     public     ResultData deleteIsdel(Integer sid){
         shuService.deleteIsdel(sid);
         return ResultData.success(null);
     }
-    //根据id查询
+    /*
+     * 路径   127.0.0.1:8080/ShuController/getDataByid
+     *
+     * 参数：sid
+     *
+     *
+     * get请求
+     *
+     * */
     @GetMapping("getDataByid")
     public  ResultData getDataByid(Integer sid){
         return ResultData.success(shuService.getDataByid(sid));
     }
-    //修改
+    /*
+     * 路径   127.0.0.1:8080/ShuController/update
+     *
+     * 参数：sid name nameCH typeId type  isSKU updateDate
+     *
+     * post请求
+     *
+     * */
     @PostMapping("update")
     public ResultData update(ShuXing shuXing){
         shuService.update(shuXing);
         return  ResultData.success(null);
     }
-    //新增
+    /*
+     * 路径   127.0.0.1:8080/ShuController/add
+     *
+     * 参数 name nameCH  typeId  type isSKU createDate b
+     *
+     * post请求
+     *
+     * */
     @PostMapping("add")
     public  Map add(ShuXing shuXing){
         Map map=new HashMap();
