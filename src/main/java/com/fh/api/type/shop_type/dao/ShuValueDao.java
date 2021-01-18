@@ -14,7 +14,7 @@ public interface ShuValueDao {
 
     @Select("select * from t_shuvaluee  where isDel=0 and attId=#{attId}")
     List<ShuValue> queryAll(Integer attId);
-    @Insert("insert  into  t_shuvaluee (name,nameCH,attId) value(#{name},#{nameCH},#{attId})")
+    @Insert("insert  into  t_shuvaluee (name,nameCH,attId,isDel) value(#{name},#{nameCH},#{attId},#{isDel})")
     void add(ShuValue shuValue);
     @Select("select * from t_shuvaluee  where vid=#{vid}")
     Map getDataByid(Integer vid);
