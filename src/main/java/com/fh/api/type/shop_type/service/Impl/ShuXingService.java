@@ -54,4 +54,9 @@ public class ShuXingService implements ShuService {
         shuDao.add(shuXing);
     }
 
+    @Override
+    public List<ShuXing> queryDataByTypeId(Integer typeId) {
+        return shuDao.queryDataByTypeId(typeId);
+    }
+
 }

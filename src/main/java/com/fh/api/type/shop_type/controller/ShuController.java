@@ -5,6 +5,7 @@ import com.fh.api.type.shop_type.model.ShuXing;
 import com.fh.api.type.shop_type.service.ShuService;
 import com.fh.api.type.shop_type.utils.ResultData;
 import com.fh.api.type.shop_type.utils.ShuVO;
+import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -92,5 +93,9 @@ public class ShuController {
         shuService.add(shuXing);
         map.put("code",1);
         return map;
+    }
+    @GetMapping("queryDataByTypeId")
+    public ResultData queryDataByTypeId(Integer typeId){
+        return ResultData.success(shuService.queryDataByTypeId(typeId));
     }
 }

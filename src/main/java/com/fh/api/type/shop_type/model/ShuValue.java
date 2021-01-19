@@ -12,15 +12,12 @@ private Integer isDel;
     public Integer getIsDel() {
         return isDel;
     }
-
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
     }
-
     public Integer getVid() {
         return vid;
     }
-
     public void setVid(Integer vid) {
         this.vid = vid;
     }

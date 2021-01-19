@@ -14,6 +14,9 @@ public class Shop {
     private  Double price;
     private  Integer stocks;
     private  Integer sortNum;
+    private  Integer typeId;
+    private  String imgPath;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date createDate;
@@ -41,6 +44,22 @@ public class Shop {
 
     public String getTitle() {
         return title;
+    }
+
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     public void setTitle(String title) {

@@ -24,4 +24,6 @@ public interface ShuDao {
             "\n" +
             "  value(#{name},#{nameCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{author})")
     void add(ShuXing shuXing);
+    @Select("select * from t_shuxing  where typeId=#{typeId} and isDel=0")
+    List<ShuXing> queryDataByTypeId(Integer typeId);
 }
