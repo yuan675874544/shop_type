@@ -56,4 +56,17 @@ public class ShopController {
         newName="imgs/"+newName;
         return ResultData.success(OssFileUtils.uploadFile(img.getInputStream(),newName));
     }
+    /*
+     * 路径   127.0.0.1:8080/ShopController/deleteIsdel
+     *
+     * 参数 iid
+     *
+     * post请求
+     *
+     * */
+    @PostMapping("deleteIsdel")
+    public     ResultData deleteIsdel(Integer shopId){
+        shopService.deleteIsdel(shopId);
+        return ResultData.success(null);
+    }
 }

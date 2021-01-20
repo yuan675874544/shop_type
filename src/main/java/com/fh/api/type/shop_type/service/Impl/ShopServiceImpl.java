@@ -15,7 +15,13 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public void add(Shop shop) {
+        shop.setIsDel(0);
         shop.setCreateDate(new Date());
         shopDao.add(shop);
+    }
+
+    @Override
+    public void deleteIsdel(Integer shopId) {
+        shopDao.deleteIsdel(shopId);
     }
 }
