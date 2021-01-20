@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.Map;
 
 @Service
 public class ShopServiceImpl implements ShopService {
@@ -23,5 +24,10 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public void deleteIsdel(Integer shopId) {
         shopDao.deleteIsdel(shopId);
+    }
+
+    @Override
+    public Map getDataByid(Integer shopId) {
+        return shopDao.getDataByid(shopId);
     }
 }

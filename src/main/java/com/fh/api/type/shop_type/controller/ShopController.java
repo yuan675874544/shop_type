@@ -4,10 +4,7 @@ import com.fh.api.type.shop_type.model.Shop;
 import com.fh.api.type.shop_type.service.ShopService;
 import com.fh.api.type.shop_type.utils.OssFileUtils;
 import com.fh.api.type.shop_type.utils.ResultData;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -25,7 +22,7 @@ public class ShopController {
     /*
      * 路径   127.0.0.1:8080/ShopController/add
      *
-     * 参数 shopId name title bandId productdecs price stocks sortNum  typeId   imgPath  createDate   updateDate  author   isDel
+     * 参数 shopId name title bandId productdecs price stocks sortNum  typeId   imgPath  createDate    author   isDel
      *
      * post请求
      *
@@ -59,7 +56,7 @@ public class ShopController {
     /*
      * 路径   127.0.0.1:8080/ShopController/deleteIsdel
      *
-     * 参数 iid
+     * 参数 shopId
      *
      * post请求
      *
@@ -68,5 +65,19 @@ public class ShopController {
     public     ResultData deleteIsdel(Integer shopId){
         shopService.deleteIsdel(shopId);
         return ResultData.success(null);
+    }
+    /*
+     * 路径   127.0.0.1:8080/ShopController/getDataByid
+     *
+     * 参数：shopId
+     *
+     *
+     * get请求
+     *
+     * */
+    //根据id查询数据
+    @GetMapping("getDataByid")
+    public  ResultData getDataByid(Integer shopId){
+        return ResultData.success(shopService.getDataByid(shopId));
     }
 }
