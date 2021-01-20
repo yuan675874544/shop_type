@@ -80,4 +80,17 @@ public class ShopController {
     public  ResultData getDataByid(Integer shopId){
         return ResultData.success(shopService.getDataByid(shopId));
     }
+    /*
+     * 路径   127.0.0.1:8080/ShopController/update
+     *
+     * 参数：shopId name title bandId productdecs price stocks sortNum  typeId   imgPath  updateDate    author   isDel
+     *
+     * post请求
+     *
+     * */
+    @PostMapping("update")
+    public  ResultData update(Shop shop){
+        shopService.update(shop);
+        return  ResultData.success(null);
+    }
 }

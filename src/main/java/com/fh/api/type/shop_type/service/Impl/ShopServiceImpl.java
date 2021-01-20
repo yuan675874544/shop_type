@@ -30,4 +30,10 @@ public class ShopServiceImpl implements ShopService {
     public Map getDataByid(Integer shopId) {
         return shopDao.getDataByid(shopId);
     }
+
+    @Override
+    public void update(Shop shop) {
+        shop.setUpdateDate(new Date());
+         shopDao.update(shop);
+    }
 }

@@ -10,4 +10,6 @@ public interface ShopService {
     void deleteIsdel(Integer shopId);
 
     Map getDataByid(Integer shopId);
+
+    void  update(Shop shop);
 }

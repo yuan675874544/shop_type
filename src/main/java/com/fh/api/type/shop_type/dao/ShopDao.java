@@ -15,4 +15,6 @@ public interface ShopDao {
     void deleteIsdel(Integer shopId);
     @Select("select * from shop where shopId=#{shopId}")
     Map getDataByid(Integer shopId);
+    @Update("update shop set name=#{name},title=#{title},bandId=#{bandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},typeId=#{typeId},imgPath=#{imgPath},updateDate=#{updateDate}")
+    void update(Shop shop);
 }
