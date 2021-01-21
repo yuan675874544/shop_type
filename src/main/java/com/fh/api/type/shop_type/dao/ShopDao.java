@@ -1,14 +1,18 @@
 package com.fh.api.type.shop_type.dao;
 
 import com.fh.api.type.shop_type.model.Shop;
+import com.fh.api.type.shop_type.utils.ShopDataVo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
 import java.util.Map;
 
 public interface ShopDao {
+   
+
     @Insert("insert into shop (name,title,bandId,productdecs,price,stocks,sortNum,typeId,imgPath,createDate,author,isDel) " +
             "values (#{name},#{title},#{bandId},#{productdecs},#{price},#{stocks},#{sortNum},#{typeId},#{imgPath},#{createDate},#{author},#{isDel})")
     @Options(useGeneratedKeys = true, keyProperty = "shopId")
@@ -19,4 +23,8 @@ public interface ShopDao {
     Map getDataByid(Integer shopId);
     @Update("update shop set name=#{name},title=#{title},bandId=#{bandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},typeId=#{typeId},imgPath=#{imgPath},updateDate=#{updateDate}")
     void update(Shop shop);
+
+    Integer queryCount(ShopDataVo vo);
+
+    List<Shop> queryDataByVo(ShopDataVo vo);
 }

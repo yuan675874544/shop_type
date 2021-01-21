@@ -3,17 +3,17 @@
         "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.fh.api.type.shop_type.dao.ShuDao">
-<select id="queryCount" parameterType="com.fh.api.type.shop_type.utils.ShuVO" resultType="java.lang.Integer">
+<mapper namespace="com.fh.api.type.shop_type.dao.ShopDao">
+<select id="queryCount" parameterType="com.fh.api.type.shop_type.utils.ShopDataVo" resultType="java.lang.Integer">
 
-      select count(*) from t_shuxing where  isDel=0
+      select count(*) from shop where  isDel=0
     <if test="name!=null and name!=''">
         and name=#{name}
     </if>
 
 </select>
-    <select id="queryDataByVo" parameterType="com.fh.api.type.shop_type.utils.ShuVO" resultType="com.fh.api.type.shop_type.model.ShuXing">
-        select * from  t_shuxing where  isDel=0
+    <select id="queryDataByVo" parameterType="com.fh.api.type.shop_type.utils.ShopDataVo" resultType="com.fh.api.type.shop_type.model.Shop">
+        select * from  shop where  isDel=0
         <if test="name!=null and name!=''">
             and name=#{name}
         </if>

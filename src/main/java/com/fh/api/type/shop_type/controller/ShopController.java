@@ -4,6 +4,8 @@ import com.fh.api.type.shop_type.model.Shop;
 import com.fh.api.type.shop_type.service.ShopService;
 import com.fh.api.type.shop_type.utils.OssFileUtils;
 import com.fh.api.type.shop_type.utils.ResultData;
+import com.fh.api.type.shop_type.utils.ShopDataVo;
+import com.fh.api.type.shop_type.utils.ShuVO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -92,4 +94,25 @@ public class ShopController {
         shopService.update(shop);
         return  ResultData.success(null);
     }
+    /*查询
+     * 路径   127.0.0.1:8080/ShuController/queryShuData
+     *
+     * 参数 current(当前页) size(每页展示条数)
+     *
+     * post请求
+     *
+     * */
+    @PostMapping("queryShopData")
+    public ResultData queryShuData(ShopDataVo vo){
+        if (vo.getCurrent()==null){
+            ResultData.error(400,"非法请求");
+        }
+        if (vo.getSize()==null){
+            ResultData.error(400,"非法请求");
+        }
+        Map map=shopService.queryShopData(vo);
+        return  ResultData.success(map);
+
+    }
+
 }

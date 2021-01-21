@@ -6,17 +6,16 @@ import com.fh.api.type.shop_type.dao.ShopAttrDao;
 import com.fh.api.type.shop_type.dao.ShopDao;
 import com.fh.api.type.shop_type.model.Shop;
 import com.fh.api.type.shop_type.model.ShopDatas;
+import com.fh.api.type.shop_type.model.ShuXing;
 import com.fh.api.type.shop_type.service.ShopService;
+import com.fh.api.type.shop_type.utils.ShopDataVo;
 import com.google.gson.JsonObject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.beans.Transient;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class ShopServiceImpl implements ShopService {
@@ -80,5 +79,15 @@ public class ShopServiceImpl implements ShopService {
     public void update(Shop shop) {
         shop.setUpdateDate(new Date());
          shopDao.update(shop);
+    }
+
+    @Override
+    public Map queryShopData(ShopDataVo vo) {
+        Map map=new HashMap();
+        Integer integer=shopDao.queryCount(vo);
+        map.put("count",integer);
+        List<Shop> shop=shopDao.queryDataByVo(vo);
+        map.put("list",shop);
+        return map;
     }
 }
