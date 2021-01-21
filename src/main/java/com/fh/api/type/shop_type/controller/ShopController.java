@@ -13,9 +13,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-@CrossOrigin
+
 @RestController
 @RequestMapping("ShopController")
+@CrossOrigin
 public class ShopController {
     @Resource
     private ShopService shopService;
@@ -28,11 +29,9 @@ public class ShopController {
      *
      * */
     @PostMapping("add")
-    public Map add(Shop shop){
-        Map map=new HashMap();
-        shopService.add(shop);
-        map.put("code",200);
-        return  map;
+    public ResultData add(Shop shop,String attr,String sku){
+     shopService.add(shop,attr,sku);
+     return ResultData.success("");
     }
     //上传文件
     /*

@@ -5,7 +5,7 @@ import com.fh.api.type.shop_type.model.Shop;
 import java.util.Map;
 
 public interface ShopService {
-    void add(Shop shop);
+    void add(Shop shop,String attr,String sku);
 
     void deleteIsdel(Integer shopId);
 
