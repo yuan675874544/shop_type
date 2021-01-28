@@ -18,4 +18,6 @@ public interface ShuService {
     void add(ShuXing shuXing);
 
     List<ShuXing> queryDataByTypeId(Integer typeId);
+
+   Map queryDatasType(Integer typeId);
 }

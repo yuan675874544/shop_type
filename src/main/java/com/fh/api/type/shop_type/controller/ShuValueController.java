@@ -11,10 +11,10 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@CrossOrigin
+
 @RequestMapping("ShuValueController")
 @RestController
-
+@CrossOrigin
 public class ShuValueController {
     @Resource
     private ShuValueService shuValueService;

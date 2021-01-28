@@ -22,4 +22,6 @@ public interface ShuValueDao {
     void update(ShuValue shuValue);
     @Update("update t_shuvaluee set isDel=1 where vid=#{vid}")
     void deleteIsdel(Integer vid);
+    @Select("select * from t_shuvaluee  where isDel=0 and attId=#{sid}")
+    List<ShuValue> queryAllDataByAid(Integer sid);
 }

@@ -1,6 +1,7 @@
 package com.fh.api.type.shop_type.controller;
 
 import com.fh.api.type.shop_type.model.Pin;
+import com.fh.api.type.shop_type.model.ShuValue;
 import com.fh.api.type.shop_type.model.ShuXing;
 import com.fh.api.type.shop_type.service.ShuService;
 import com.fh.api.type.shop_type.utils.ResultData;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -97,5 +99,9 @@ public class ShuController {
     @GetMapping("queryDataByTypeId")
     public ResultData queryDataByTypeId(Integer typeId){
         return ResultData.success(shuService.queryDataByTypeId(typeId));
+    }
+    @GetMapping("queryDatasType")
+    public ResultData queryDatasType(Integer typeId){
+        return ResultData.success(shuService.queryDatasType(typeId));
     }
 }

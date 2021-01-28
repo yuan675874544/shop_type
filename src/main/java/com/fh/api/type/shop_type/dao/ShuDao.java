@@ -1,5 +1,6 @@
 package com.fh.api.type.shop_type.dao;
 
+import com.fh.api.type.shop_type.model.ShuValue;
 import com.fh.api.type.shop_type.model.ShuXing;
 import com.fh.api.type.shop_type.utils.ShuVO;
 import org.apache.ibatis.annotations.Insert;
@@ -26,4 +27,8 @@ public interface ShuDao {
     void add(ShuXing shuXing);
     @Select("select * from t_shuxing  where typeId=#{typeId} and isDel=0")
     List<ShuXing> queryDataByTypeId(Integer typeId);
+
+    List<ShuXing> queryDatasType(Integer typeId);
+
+    List<ShuValue> querySid(Integer sid);
 }

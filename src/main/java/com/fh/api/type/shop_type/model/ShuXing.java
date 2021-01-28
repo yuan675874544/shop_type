@@ -1,9 +1,11 @@
 package com.fh.api.type.shop_type.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.apache.catalina.LifecycleState;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 public class ShuXing {
     private  Integer sid;
@@ -18,6 +20,16 @@ public class ShuXing {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private  Date updateDate;
     private  String author;
+    private List<ShuValue> values;
+
+
+    public List<ShuValue> getValues() {
+        return values;
+    }
+
+    public void setValues(List<ShuValue> values) {
+        this.values = values;
+    }
 
     public Integer getSid() {
         return sid;

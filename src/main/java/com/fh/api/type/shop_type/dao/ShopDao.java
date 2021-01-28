@@ -2,10 +2,7 @@ package com.fh.api.type.shop_type.dao;
 
 import com.fh.api.type.shop_type.model.Shop;
 import com.fh.api.type.shop_type.utils.ShopDataVo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +18,7 @@ public interface ShopDao {
     void deleteIsdel(Integer shopId);
     @Select("select * from shop where shopId=#{shopId}")
     Map getDataByid(Integer shopId);
-    @Update("update shop set name=#{name},title=#{title},bandId=#{bandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},typeId=#{typeId},imgPath=#{imgPath},updateDate=#{updateDate}")
+    @Update("update shop set name=#{name},title=#{title},bandId=#{bandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},typeId=#{typeId},imgPath=#{imgPath},updateDate=#{updateDate} where shopId=#{shopId}")
     void update(Shop shop);
 
     Integer queryCount(ShopDataVo vo);

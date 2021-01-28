@@ -1,6 +1,7 @@
 package com.fh.api.type.shop_type.controller;
 
 import com.fh.api.type.shop_type.model.Shop;
+import com.fh.api.type.shop_type.model.ShopDatas;
 import com.fh.api.type.shop_type.service.ShopService;
 import com.fh.api.type.shop_type.utils.OssFileUtils;
 import com.fh.api.type.shop_type.utils.ResultData;
@@ -11,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -114,5 +114,12 @@ public class ShopController {
         return  ResultData.success(map);
 
     }
-
+    @GetMapping("queryAttrByPid")
+    public  ResultData queryAttrByPid(Integer pid){
+        return  ResultData.success(shopService.queryAttrByPid(pid));
+    }
+    @GetMapping("querySKUckvalues")
+    public ResultData querySKUckvalues(Integer pid){
+        return  ResultData.success(shopService.querySKUckvalues(pid));
+    }
 }
