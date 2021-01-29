@@ -4,12 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.fh.api.type.shop_type.dao.UserDao">
-    <select id="queryByName" resultType="com.fh.api.type.shop_type.model.User" parameterType="java.lang.String">
+    <insert id="addUser" parameterType="com.fh.api.type.shop_type.model.User">
+        insert into dian_user (name,realName,password,sex,phone,email,idCard,birthday,imgPath,eduId,deptId,createDate,UpdateDate) value
+        (#{name},#{realName},#{password},#{sex},#{phone},#{email},#{idCard},#{birthday},#{imgPath},#{eduId},#{deptId},#{createDate},#{UpdateDate})
+    </insert>
+
+    <select id="queryUsername" parameterType="java.lang.String" resultType="com.fh.api.type.shop_type.model.User">
         select * from t_user where name=#{name}
     </select>
-
-    <insert id="save" parameterType="com.fh.api.type.shop_type.model.User" >
-    insert  into t_user (name,realName,password,sex,phone,email,idCard,birthday,eduId,deptId, createDate)
-  values(#{name},#{realName},#{password},#{sex},#{phone},#{email},#{idCard},#{birthday},#{eduId},#{deptId},#{createDate})
-</insert>
  </mapper>

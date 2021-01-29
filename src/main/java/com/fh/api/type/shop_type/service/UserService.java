@@ -5,8 +5,8 @@ import com.fh.api.type.shop_type.model.User;
 import java.util.Map;
 
 public interface UserService {
-    User queryByName(String name);
 
-    void save(User user);
+    Map queryUser(User user);
 
+    Map addUser(User user);
 }
