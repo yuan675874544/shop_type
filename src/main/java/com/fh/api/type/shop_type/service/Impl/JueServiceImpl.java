@@ -8,6 +8,7 @@ import com.fh.api.type.shop_type.utils.JueVO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,5 +26,13 @@ public class JueServiceImpl implements JueService {
         List<JueSe> jueSe=jueDao.queryDataByVo(vo);
         map.put("list",jueSe);
         return map;
+    }
+
+    @Override
+    public void add(JueSe jueSe) {
+        jueSe.setCreateDate(new Date());
+        jueSe.setIsDel(0);
+        jueSe.setAuthor("袁亚洲");
+        jueDao.add(jueSe);
     }
 }
