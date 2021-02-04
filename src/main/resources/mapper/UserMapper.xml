@@ -5,10 +5,9 @@
 
 <mapper namespace="com.fh.api.type.shop_type.dao.UserDao">
     <insert id="addUser" parameterType="com.fh.api.type.shop_type.model.User">
-        insert into dian_user (name,realName,password,sex,phone,email,idCard,birthday,imgPath,eduId,deptId,createDate,UpdateDate) value
-        (#{name},#{realName},#{password},#{sex},#{phone},#{email},#{idCard},#{birthday},#{imgPath},#{eduId},#{deptId},#{createDate},#{UpdateDate})
+        insert into t_user (name,realName,password,sex,phone,email,idCard,birthday,imgPath,eduId,deptId,createDate) value
+        (#{name},#{realName},#{password},#{sex},#{phone},#{email},#{idCard},#{birthday},#{imgPath},#{eduId},#{deptId},#{createDate})
     </insert>
-
     <select id="queryUsername" parameterType="java.lang.String" resultType="com.fh.api.type.shop_type.model.User">
         select * from t_user where name=#{name}
     </select>
