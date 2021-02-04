@@ -10,4 +10,6 @@ public interface QuanService {
     void update(Quan quan);
 
     Map getDataByid(Integer qid);
+
+    void add(Quan quan);
 }

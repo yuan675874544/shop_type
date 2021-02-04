@@ -6,6 +6,7 @@ import com.fh.api.type.shop_type.service.QuanService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Map;
 
 @Service
@@ -26,5 +27,13 @@ public class QuanServiceImpl implements QuanService {
     @Override
     public Map getDataByid(Integer qid) {
         return quanDao.getDataByid(qid);
+    }
+
+    @Override
+    public void add(Quan quan) {
+        quan.setIsDel(0);
+        quan.setAuthor("袁亚洲");
+        quan.setCreateDate(new Date());
+        quanDao.add(quan);
     }
 }

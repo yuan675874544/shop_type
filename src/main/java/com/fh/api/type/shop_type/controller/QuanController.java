@@ -7,6 +7,8 @@ import com.fh.api.type.shop_type.utils.ResultData;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("QuanController")
@@ -54,5 +56,21 @@ public class QuanController {
     public  ResultData getDataByid(Integer qid){
 
         return ResultData.success(quanServicel.getDataByid(qid));
+    }
+    /*
+     * 路径   127.0.0.1:8080/PinController/add
+     *
+     * 参数 name createDate bandE imgPath bandDesc ord  author
+     *
+     * post请求
+     *
+     * */
+    //新增
+    @PostMapping("add")
+    public Map add(Quan quan){
+        Map map=new HashMap();
+        quanServicel.add(quan);
+        map.put("code",1);
+        return map;
     }
 }

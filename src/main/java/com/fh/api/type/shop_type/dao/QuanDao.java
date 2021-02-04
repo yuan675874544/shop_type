@@ -1,6 +1,7 @@
 package com.fh.api.type.shop_type.dao;
 
 import com.fh.api.type.shop_type.model.Quan;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -14,4 +15,8 @@ public interface QuanDao {
     void update(Quan quan);
     @Select("select * from t_quanxian  where qid=#{qid}")
     Map getDataByid(Integer qid);
+    @Insert(" insert  into t_quanxian (name,url,type,isDel,CreateDate,author)\n" +
+            "\n" +
+            "  value(#{name},#{url},#{type},#{isDel},#{CreateDate},#{author})")
+    void add(Quan quan);
 }
