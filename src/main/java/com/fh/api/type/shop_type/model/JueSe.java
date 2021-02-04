@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 public class JueSe {
-    private  Integer id;
+    private  Integer jid;
     private  String name;
     private Integer isDel;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -14,12 +14,12 @@ public class JueSe {
     private Date CreateDate;
     private String author;
 
-    public Integer getId() {
-        return id;
+    public Integer getJid() {
+        return jid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setJid(Integer jid) {
+        this.jid = jid;
     }
 
     public String getName() {
