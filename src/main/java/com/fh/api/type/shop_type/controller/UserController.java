@@ -1,5 +1,4 @@
-package com.example.dian_hshang.controller;
-
+package com.fh.api.type.shop_type.controller;
 
 import com.fh.api.type.shop_type.model.User;
 import com.fh.api.type.shop_type.service.UserService;
