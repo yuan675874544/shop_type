@@ -45,4 +45,10 @@ public class JueServiceImpl implements JueService {
     public Map getDataByid(Integer jid) {
         return jueDao.getDataByid(jid);
     }
+
+    @Override
+    public void update(JueSe jueSe) {
+        jueSe.setAuthor("袁亚洲");
+        jueDao.update(jueSe);
+    }
 }

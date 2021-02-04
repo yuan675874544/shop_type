@@ -13,4 +13,6 @@ public interface JueService {
     void deleteIsdel(Integer jid);
 
     Map getDataByid(Integer jid);
+
+    void update(JueSe jueSe);
 }

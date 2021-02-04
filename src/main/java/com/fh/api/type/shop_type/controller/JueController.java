@@ -80,4 +80,18 @@ public class JueController {
 
         return ResultData.success(jueService.getDataByid(jid));
     }
+    /*
+     * 路径   127.0.0.1:8080/JueController/update
+     *
+     * 参数：jid name  isDel  author
+     *
+     * post请求
+     *
+     * */
+    @PostMapping("update")
+    public ResultData update(JueSe jueSe){
+        jueService.update(jueSe);
+        return ResultData.success(null);
+    }
+
 }

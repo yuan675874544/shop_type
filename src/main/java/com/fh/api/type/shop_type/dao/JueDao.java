@@ -20,6 +20,8 @@ public interface JueDao {
     @Update("update t_juese set isDel=1 where jid=#{jid}")
     void deleteIsdel(Integer jid);
     @Select("select * from t_juese  where jid=#{jid}")
-
     Map getDataByid(Integer jid);
+    @Update("update  t_juese set  name=#{name},isDel=#{isDel}, " +
+            " author=#{author} where jid=#{jid}")
+    void update(JueSe jueSe);
 }
