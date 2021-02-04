@@ -3,6 +3,7 @@ package com.fh.api.type.shop_type.dao;
 import com.fh.api.type.shop_type.model.JueSe;
 import com.fh.api.type.shop_type.utils.JueVO;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface JueDao {
             "\n" +
             "  value(#{name},#{isDel},#{CreateDate},#{author})")
     void add(JueSe jueSe);
+    @Update("update t_juese set isDel=1 where jid=#{jid}")
+    void deleteIsdel(Integer jid);
 }

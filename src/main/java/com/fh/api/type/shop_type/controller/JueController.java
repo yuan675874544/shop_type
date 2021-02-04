@@ -55,4 +55,17 @@ public class JueController {
         map.put("code",1);
         return map;
     }
+    /*
+     * 路径   127.0.0.1:8080/JueController/deleteIsdel
+     *
+     * 参数 id
+     *
+     * post请求
+     *
+     * */
+    @PostMapping("deleteIsdel")
+    public ResultData deleteIsdel(Integer jid){
+        jueService.deleteIsdel(jid);
+        return ResultData.success(null);
+    }
 }

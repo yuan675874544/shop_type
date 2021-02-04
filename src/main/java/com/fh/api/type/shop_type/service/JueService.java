@@ -9,4 +9,6 @@ public interface JueService {
     Map queryJueDataPage(JueVO vo);
 
     void add(JueSe jueSe);
+
+    void deleteIsdel(Integer jid);
 }

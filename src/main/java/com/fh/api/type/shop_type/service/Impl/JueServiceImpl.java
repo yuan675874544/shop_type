@@ -35,4 +35,9 @@ public class JueServiceImpl implements JueService {
         jueSe.setAuthor("袁亚洲");
         jueDao.add(jueSe);
     }
+
+    @Override
+    public void deleteIsdel(Integer jid) {
+        jueDao.deleteIsdel(jid);
+    }
 }
