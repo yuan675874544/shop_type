@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.api.type.shop_type.dao.QuanDao">
+<select id="queryCount" parameterType="com.fh.api.type.shop_type.utils.QuanVO" resultType="java.lang.Integer">
+
+      select count(*) from t_quanxian where isDel=0
+    <if test="name!=null and name!=''">
+        and name=#{name}
+    </if>
+</select>
+    <select id="queryDataByVo" parameterType="com.fh.api.type.shop_type.utils.QuanVO" resultType="com.fh.api.type.shop_type.model.Quan">
+        select * from  t_quanxian where isDel=0
+        <if test="name!=null and name!=''">
+        and name=#{name}
+    </if>
+         limit ${size*(current-1)},#{size}
+    </select>
+ </mapper>

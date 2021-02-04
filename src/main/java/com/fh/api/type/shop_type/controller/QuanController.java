@@ -3,6 +3,8 @@ package com.fh.api.type.shop_type.controller;
 import com.fh.api.type.shop_type.model.Pin;
 import com.fh.api.type.shop_type.model.Quan;
 import com.fh.api.type.shop_type.service.QuanService;
+import com.fh.api.type.shop_type.utils.PinVO;
+import com.fh.api.type.shop_type.utils.QuanVO;
 import com.fh.api.type.shop_type.utils.ResultData;
 import org.springframework.web.bind.annotation.*;
 
@@ -72,5 +74,23 @@ public class QuanController {
         quanServicel.add(quan);
         map.put("code",1);
         return map;
+    }
+    /*查询
+     * 路径   127.0.0.1:8080/PinController/list
+     *
+     * 参数 current(当前页) size(每页展示条数)
+     *
+     * post请求
+     *
+     * */
+    @PostMapping("list")
+    public  ResultData list(QuanVO vo){
+        if (vo.getCurrent()==null){
+            return  ResultData.error(400,"非法请求");
+        }if (vo.getSize()==null){
+            return ResultData.error(400,"非法请求");
+        }
+        Map map=quanServicel.queryQuanDataPage(vo);
+        return ResultData.success(map);
     }
 }
