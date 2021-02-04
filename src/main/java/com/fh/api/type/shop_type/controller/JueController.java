@@ -6,10 +6,7 @@ import com.fh.api.type.shop_type.service.JueService;
 import com.fh.api.type.shop_type.utils.JueVO;
 import com.fh.api.type.shop_type.utils.QuanVO;
 import com.fh.api.type.shop_type.utils.ResultData;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -67,5 +64,20 @@ public class JueController {
     public ResultData deleteIsdel(Integer jid){
         jueService.deleteIsdel(jid);
         return ResultData.success(null);
+    }
+    /*
+     * 路径   127.0.0.1:8080/JueController/getDataByid
+     *
+     * 参数：jid
+     *
+     *
+     * get请求
+     *
+     * */
+    //根据id查询数据
+    @GetMapping("getDataByid")
+    public  ResultData getDataByid(Integer jid){
+
+        return ResultData.success(jueService.getDataByid(jid));
     }
 }

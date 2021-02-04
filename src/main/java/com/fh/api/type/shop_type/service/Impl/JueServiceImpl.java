@@ -40,4 +40,9 @@ public class JueServiceImpl implements JueService {
     public void deleteIsdel(Integer jid) {
         jueDao.deleteIsdel(jid);
     }
+
+    @Override
+    public Map getDataByid(Integer jid) {
+        return jueDao.getDataByid(jid);
+    }
 }
