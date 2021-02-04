@@ -6,6 +6,7 @@ import com.fh.api.type.shop_type.service.QuanService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 @Service
 public class QuanServiceImpl implements QuanService {
@@ -20,5 +21,10 @@ public class QuanServiceImpl implements QuanService {
     @Override
     public void update(Quan quan) {
         quanDao.update(quan);
+    }
+
+    @Override
+    public Map getDataByid(Integer qid) {
+        return quanDao.getDataByid(qid);
     }
 }

@@ -4,10 +4,7 @@ import com.fh.api.type.shop_type.model.Pin;
 import com.fh.api.type.shop_type.model.Quan;
 import com.fh.api.type.shop_type.service.QuanService;
 import com.fh.api.type.shop_type.utils.ResultData;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -33,7 +30,7 @@ public class QuanController {
     /*
      * 路径   127.0.0.1:8080/PinController/update
      *
-     * 参数：id name updateDate bandE imgPath bandDesc ord  author
+     * 参数：id name url type isDel CreateDate author
      *
      * post请求
      *
@@ -42,5 +39,20 @@ public class QuanController {
     public ResultData update(Quan quan){
         quanServicel.update(quan);
         return ResultData.success(null);
+    }
+    /*
+     * 路径   127.0.0.1:8080/QuanController/getDataByid
+     *
+     * 参数：qid
+     *
+     *
+     * get请求
+     *
+     * */
+    //根据id查询数据
+    @GetMapping("getDataByid")
+    public  ResultData getDataByid(Integer qid){
+
+        return ResultData.success(quanServicel.getDataByid(qid));
     }
 }
